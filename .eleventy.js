@@ -120,6 +120,6 @@ module.exports = function (eleventyConfig) {
       data: "_data",
       output: "_site"
     },
-    pathPrefix: "/"  // Change this to your repo name for GitHub Pages: "/repo-name/"
+    pathPrefix: "/218_portfolio/"  // GitHub Pages path prefix
   };
 };
