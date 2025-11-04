@@ -1,0 +1,40 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<article class="project">
+  <header class="project-header">
+    <h1>{{ title }}</h1>
+    {% if description %}
+      <p class="project-description">{{ description }}</p>
+    {% endif %}
+    
+    <div class="project-meta">
+      {% if tech %}
+        <div class="project-tech">
+          <strong>Technologies:</strong>
+          {% for item in tech %}
+            <span class="tech-tag">{{ item }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+      
+      <div class="project-links">
+        {% if github %}
+          <a href="{{ github }}" target="_blank" rel="noopener noreferrer" class="project-link">
+            View on GitHub
+          </a>
+        {% endif %}
+        {% if demo %}
+          <a href="{{ demo }}" target="_blank" rel="noopener noreferrer" class="project-link">
+            Live Demo
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </header>
+  
+  <div class="project-content">
+    {{ content | safe }}
+  </div>
+</article>
+{% endblock %}

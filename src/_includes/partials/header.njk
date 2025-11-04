@@ -1,0 +1,27 @@
+<header class="site-header">
+  <div class="container">
+    <div class="header-content">
+      <a href="/" class="site-logo">
+        <span class="site-name">{{ site.name }}</span>
+      </a>
+      
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+      
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          {% for item in navigation %}
+            <li class="nav-item">
+              <a href="{{ item.url }}" 
+                 class="nav-link{% if page.url == item.url %} active{% endif %}"
+                 {% if page.url == item.url %}aria-current="page"{% endif %}>
+                {{ item.text }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

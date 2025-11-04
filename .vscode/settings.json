@@ -1,0 +1,21 @@
+{
+    "files.exclude": {
+        "node_modules": true,
+        "_site": false
+    },
+    "files.associations": {
+        "*.njk": "nunjucks",
+        "*.md": "markdown"
+    },
+    "emmet.includeLanguages": {
+        "nunjucks": "html"
+    },
+    "editor.formatOnSave": true,
+    "[markdown]": {
+        "editor.wordWrap": "on"
+    },
+    "search.exclude": {
+        "node_modules": true,
+        "_site": true
+    }
+}

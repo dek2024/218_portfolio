@@ -1,0 +1,34 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "node_modules": true,
+      "_site": false
+    },
+    "files.associations": {
+      "*.njk": "nunjucks",
+      "*.md": "markdown"
+    },
+    "emmet.includeLanguages": {
+      "nunjucks": "html"
+    },
+    "editor.formatOnSave": true,
+    "[markdown]": {
+      "editor.wordWrap": "on"
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "ronnidc.nunjucks",
+      "esbenp.prettier-vscode",
+      "davidanson.vscode-markdownlint",
+      "streetsidesoftware.code-spell-checker",
+      "formulahendry.auto-rename-tag",
+      "formulahendry.auto-close-tag"
+    ]
+  }
+}

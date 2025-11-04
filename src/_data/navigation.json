@@ -1,0 +1,22 @@
+[
+  {
+    "text": "Home",
+    "url": "/",
+    "order": 1
+  },
+  {
+    "text": "About",
+    "url": "/about/",
+    "order": 2
+  },
+  {
+    "text": "Blog",
+    "url": "/blog/",
+    "order": 3
+  },
+  {
+    "text": "Projects",
+    "url": "/projects/",
+    "order": 4
+  }
+]

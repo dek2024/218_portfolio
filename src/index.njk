@@ -1,0 +1,71 @@
+---
+layout: base
+title: Home
+description: Welcome to my professional portfolio
+---
+
+<section class="hero">
+  <div class="container">
+    <h1 class="hero-title">Hi, I'm {{ site.name }}</h1>
+    <p class="hero-subtitle">{{ site.description }}</p>
+    <div class="hero-cta">
+      <a href="/projects/" class="btn btn-primary">View My Work</a>
+      <a href="/about/" class="btn btn-secondary">About Me</a>
+    </div>
+  </div>
+</section>
+
+<section class="featured-projects">
+  <div class="container">
+    <h2>Featured Projects</h2>
+    <div class="projects-grid">
+      {% set featuredProjects = collections.projects | head(3) %}
+      {% for project in featuredProjects %}
+        <article class="project-card">
+          <h3>
+            <a href="{{ project.url }}">{{ project.data.title }}</a>
+          </h3>
+          <p>{{ project.data.description }}</p>
+          {% if project.data.tech %}
+            <div class="project-tech">
+              {% for item in project.data.tech | head(3) %}
+                <span class="tech-tag">{{ item }}</span>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
+    <div class="section-footer">
+      <a href="/projects/" class="link-arrow">View all projects →</a>
+    </div>
+  </div>
+</section>
+
+<section class="recent-posts">
+  <div class="container">
+    <h2>Recent Posts</h2>
+    <div class="posts-list">
+      {% set recentPosts = collections.posts | head(3) %}
+      {% for post in recentPosts %}
+        <article class="post-preview">
+          <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+          <h3>
+            <a href="{{ post.url }}">{{ post.data.title }}</a>
+          </h3>
+          <p>{{ post.data.description }}</p>
+          {% if post.data.tags %}
+            <div class="post-tags">
+              {% for tag in post.data.tags | filterTagList | head(3) %}
+                <span class="tag">#{{ tag }}</span>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
+    <div class="section-footer">
+      <a href="/blog/" class="link-arrow">View all posts →</a>
+    </div>
+  </div>
+</section>

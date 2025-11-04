@@ -1,0 +1,42 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>{{ site.name }}</h3>
+        <p>{{ site.description }}</p>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Connect</h3>
+        <ul class="social-links">
+          {% if site.social.github %}
+            <li><a href="{{ site.social.github }}" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          {% endif %}
+          {% if site.social.linkedin %}
+            <li><a href="{{ site.social.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          {% endif %}
+          {% if site.social.twitter %}
+            <li><a href="{{ site.social.twitter }}" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+          {% endif %}
+          {% if site.social.email %}
+            <li><a href="mailto:{{ site.social.email }}">Email</a></li>
+          {% endif %}
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Site</h3>
+        <ul class="footer-links">
+          {% for item in navigation %}
+            <li><a href="{{ item.url }}">{{ item.text }}</a></li>
+          {% endfor %}
+          <li><a href="/feed.xml">RSS Feed</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; {% year %} {{ site.name }}. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

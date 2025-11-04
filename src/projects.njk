@@ -1,0 +1,39 @@
+---
+layout: page
+title: Projects
+description: A collection of my work and side projects
+permalink: /projects/
+---
+
+<div class="projects-grid">
+  {% for project in collections.projects %}
+    <article class="project-card">
+      <h2>
+        <a href="{{ project.url }}">{{ project.data.title }}</a>
+      </h2>
+      {% if project.data.description %}
+        <p>{{ project.data.description }}</p>
+      {% endif %}
+      {% if project.data.tech %}
+        <div class="project-tech">
+          {% for item in project.data.tech %}
+            <span class="tech-tag">{{ item }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+      <div class="project-links">
+        {% if project.data.github %}
+          <a href="{{ project.data.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+        {% endif %}
+        {% if project.data.demo %}
+          <a href="{{ project.data.demo }}" target="_blank" rel="noopener noreferrer">Demo</a>
+        {% endif %}
+        <a href="{{ project.url }}">Learn more →</a>
+      </div>
+    </article>
+  {% endfor %}
+</div>
+
+{% if collections.projects.length == 0 %}
+  <p>No projects yet. Check back soon!</p>
+{% endif %}

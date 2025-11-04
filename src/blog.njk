@@ -1,0 +1,32 @@
+---
+layout: page
+title: Blog
+description: Thoughts, tutorials, and insights on software development
+permalink: /blog/
+---
+
+<div class="posts-list">
+  {% for post in collections.posts %}
+    <article class="post-preview">
+      <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+      <h2>
+        <a href="{{ post.url }}">{{ post.data.title }}</a>
+      </h2>
+      {% if post.data.description %}
+        <p>{{ post.data.description }}</p>
+      {% endif %}
+      {% if post.data.tags %}
+        <div class="post-tags">
+          {% for tag in post.data.tags | filterTagList %}
+            <a href="/blog/tags/{{ tag | slugify }}/" class="tag">#{{ tag }}</a>
+          {% endfor %}
+        </div>
+      {% endif %}
+      <a href="{{ post.url }}" class="read-more">Read more →</a>
+    </article>
+  {% endfor %}
+</div>
+
+{% if collections.posts.length == 0 %}
+  <p>No posts yet. Check back soon!</p>
+{% endif %}
